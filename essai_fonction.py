@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 
 #Une fonction
 
+x=np.linspace(-30.,30.,10000)
+
 def fonc(x):
   """ 
   Une fonction mathématique qui fait un sinus cardinal
@@ -19,11 +21,15 @@ def fonc(x):
   
   Sortie y qui est un SinC
   """
-  y = np.sin(x)/x;
-  fig=plt.fig("Sinus cardinal")
-  plt.clf()
-  trace=plt.plot(x,y)
+
+  return np.sin(x)/x
   
+y=fonc(x)
+  
+fig=plt.figure("Sinus cardinal")
+plt.clf()
+trace=plt.plot(x,y)
+
   
 #Affichage
   
