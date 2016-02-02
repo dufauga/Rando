@@ -22,3 +22,5 @@ def fonc(x):
   
   
 #Affichage
+  
+  #j'y comprends rien
