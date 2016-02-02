@@ -7,7 +7,7 @@ Projet collaboratif
 
 import numpy as np
 import matplotlib.pyplot as plt
-
+from matplotlib import animation
 
 #Une fonction
 
@@ -28,7 +28,25 @@ y=fonc(x)
   
 fig=plt.figure("Sinus cardinal")
 plt.clf()
-trace=plt.plot(x,y)
+line, = plt.plot([],[])
+plt.xlim(-30.,30.)
+plt.ylim(-2.,2.)
+
+def init():
+    line.set_data([],[])
+    return line,
+
+dx=.1    
+def animate(i):
+    x2=x+i*dx
+    y=fonc(x2)
+    line.set_data(x, y)
+    return line,
+    
+anim = animation.FuncAnimation(fig, animate, init_func=init, 
+                               frames=1000, interval=20, blit=True)
+
+plt.show()
 
   
 #Affichage
