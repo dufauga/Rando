@@ -5,16 +5,20 @@ Projet collaboratif
 @author: Amelie, Leonida and Amandine
 """
 
+import numpy as np
+
 #Une fonction
 
-def fonc(x,y):
+def fonc(x):
   """ 
   Une fonction mathématique qui fait un sinus cardinal
   
   Entrées: x
   
-  Sortie SinC
+  Sortie y qui est un SinC
   """
+  y = np.sin(x)/x;
+  
   
   
 #Affichage
