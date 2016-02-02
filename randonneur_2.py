@@ -4,7 +4,7 @@ Created on Tue Feb 02 11:03:13 2016
 
 Randonneur avec Python
 
-@author: Dexterite Surgical
+@author: Grrrrrrrrrrr
 """
 
 # On part d'un profil de montagne envoyé par E.Trouvé - Glacier des Bossons moyenné à 8m
