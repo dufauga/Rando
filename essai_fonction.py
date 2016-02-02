@@ -8,6 +8,13 @@ Projet collaboratif
 #Une fonction
 
 def fonc(x,y):
+  """ 
+  Une fonction mathématique qui fait un sinus cardinal
+  
+  Entrées: x
+  
+  Sortie SinC
+  """
   
   
 #Affichage
