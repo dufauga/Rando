@@ -9,6 +9,8 @@ import numpy as np
 
 #Une fonction
 
+x=np.linspace(0.,10.,1000)
+
 def fonc(x):
   """ 
   Une fonction mathématique qui fait un sinus cardinal
@@ -17,7 +19,9 @@ def fonc(x):
   
   Sortie y qui est un SinC
   """
-  y = np.sin(x)/x;
+  return np.sin(x)/x
+  
+y=fonc(x)
   
   
   
