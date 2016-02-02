@@ -14,7 +14,10 @@ Randonneur avec Python
 # split : sans rien préciser de plus:  enlève saut de ligne espaces tabulation et renvoie ce qui reste
 
 import struct
+import numpy as np
 
+u=np.linspace(0.,5000.,10000.)
+v=-6./5.*u+6000.
 
 def lire_header(path):
   f = open(path)
@@ -60,17 +63,7 @@ Z = data.reshape(ny, nx)
 import matplotlib.pyplot as plt
 import matplotlib
 
-fig = plt.figure(0)
-plt.clf()
-ax = fig.add_subplot(1,1,1)
-ax.set_aspect("equal") # ces deux lignes imposent un facteur de forme
 grad = plt.contourf(X,Y,Z, 100, cmap = matplotlib.cm.terrain) # nappe avec chp de couleur 100 est le nombre de niveaux de couleur
-cbar = plt.colorbar()
-cbar.set_label("Altitude, $z$, [m]")
-plt.contour(X,Y,Z, 20, colors = "k")# créations de lignes de niveau (contours en noir, ici 20)
-plt.grid()
-plt.xlabel("Position, $x$, [m]")
-plt.ylabel("Position, $y$, [m]")
 
 from matplotlib.colors import LightSource
 
@@ -79,6 +72,7 @@ rgb= ls.shade(Z,plt.cm.terrain) # on peut mettre aussi cm.terrain
 
 
 plt.figure(1)
+plt.clf()
 plt.imshow(rgb, 
            extent=[0,x.max(),0,y.max()], 
            aspect=1, alpha =.5)
@@ -87,4 +81,5 @@ cbar.set_label("Altitude, $z$, [m]")
 plt.xlabel("Position, $x$, [m]")
 plt.ylabel("Position, $y$, [m]")
 plt.contour(X,Y,Z,20, colors = "k")
+plt.plot(u,v, "r")
 plt.show()
