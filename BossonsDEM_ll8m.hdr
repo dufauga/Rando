@@ -1,0 +1,21 @@
+ENVI
+description = {
+  File Resize Result, x resize factor: 0.500000, y resize factor: 0.500000.
+  [Thu Jul 18 17:34:13 2013]}
+samples = 550
+lines   = 1000
+bands   = 1
+header offset = 0
+file type = ENVI Standard
+data type = 4
+interleave = bsq
+sensor type = Unknown
+byte order = 0
+x start = 201
+y start = 2301
+map info = {Geographic Lat/Lon, 1.0000, 1.0000, 6.83479982, 45.91144872, 1.0311251867e-004, 7.1975060556e-005, WGS-84, units=Degrees}
+coordinate system string = {GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]}
+wavelength units = Unknown
+pixel size = {1.03112519e-004, 7.19750606e-005, units=Meters}
+band names = {
+ Resize (Spec Math (Warp (Resize (Band 1:mnt_rgd_2008_v2):mnt_rgd_arg_taco_2008_nan):mnt_rgd_arg_taco_2008_ll):up_corrected_mnt_rgd_arg_taco_2008_ll)}
