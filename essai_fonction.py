@@ -6,6 +6,8 @@ Projet collaboratif
 """
 
 import numpy as np
+import matplotlib.pyplot as plt
+
 
 #Une fonction
 
@@ -18,7 +20,9 @@ def fonc(x):
   Sortie y qui est un SinC
   """
   y = np.sin(x)/x;
-  
+  fig=plt.fig("Sinus cardinal")
+  plt.clf()
+  trace=plt.plot(x,y)
   
   
 #Affichage
