@@ -15,8 +15,9 @@ Randonneur avec Python
 
 import struct
 import numpy as np
+from scipy.interpolate import griddata
 
-u=np.linspace(0.,5000.,10000.)
+u=np.linspace(0.,5000.,100.)
 v=-6./5.*u+6000.
 
 def lire_header(path):
@@ -60,6 +61,13 @@ y = (ny - np.arange(ny)) * dy # hauteur (en m) ny - sert à retourner la carte
 X, Y = np.meshgrid(x,y) # X et Y sont des vecteurs
 Z = data.reshape(ny, nx)
 
+"""
+def Altitude(u,v):
+    u=int(u*999/x.max())
+    v=int(v*549/y.max())
+    return u, v
+"""
+
 import matplotlib.pyplot as plt
 import matplotlib
 
@@ -83,3 +91,22 @@ plt.ylabel("Position, $y$, [m]")
 plt.contour(X,Y,Z,20, colors = "k")
 plt.plot(u,v, "r")
 plt.show()
+
+zi = griddata((X, Y), Z, (u, v), method='cubic')
+
+plt.figure(3)
+plt.clf()
+plt.plot(u,zi)
+
+"""
+for uu in xrange(len(u)):
+    for vv in xrange(len(v)):
+            uu,vv=Altitude(uu,vv)
+            a=Z[uu,vv]
+            plt.plot(uu,a)
+"""
+"""
+plt.figure(2)
+plt.clf()
+plt.plot(u,Z[u,v])
+"""
