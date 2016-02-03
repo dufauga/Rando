@@ -15,6 +15,7 @@ Randonneur avec Python
 
 import struct
 import numpy as np
+#from scipy import interpolate
 from scipy.interpolate import griddata
 
 u=np.linspace(0.,5000.,100.)
@@ -91,6 +92,10 @@ plt.ylabel("Position, $y$, [m]")
 plt.contour(X,Y,Z,20, colors = "k")
 plt.plot(u,v, "r")
 plt.show()
+
+X= X.flatten()
+Y=Y.flatten()
+Z=Z.flatten()
 
 zi = griddata((X, Y), Z, (u, v), method='cubic')
 
