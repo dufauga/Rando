@@ -84,7 +84,7 @@ plt.clf()
 plt.imshow(rgb, 
            extent=[0,x.max(),0,y.max()], 
            aspect=1, alpha =.5)
-cbar = plt.colorbar(grad) # pour "calquer" l'échelle de couleur de la figure 0...car pas de échelle de couleur associée à imshow
+cbar = plt.colorbar(grad)
 cbar.set_label("Altitude, $z$, [m]")
 plt.xlabel("Position, $x$, [m]")
 plt.ylabel("Position, $y$, [m]")
